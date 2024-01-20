@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn-primary {
+        @apply inline-block bg-white text-black border border-solid border-black py-4 px-6 transition leading-none;
+    }
+
+    .btn-primary:hover {
+        @apply hover:border-black;
+        border-width: 2px; /* Increase border width to 2px on hover */
+        /* Reduce the padding by 1px to maintain the size */
+        padding: calc(1rem - 1px) calc(1.5rem - 1px); /* Assuming py-4 is '1rem' and px-6 is '1.5rem' */
+    }
+
+
+    .btn-secondary {
+        @apply inline-block bg-primary hover:bg-secondary text-white py-4 px-6 transition leading-none
+    }
+
+    .btn-accent {
+        @apply inline-block bg-accent text-black py-4 px-6 hover:bg-white transition leading-none
+    }
+
+    .btn-transparent {
+        @apply inline-block bg-transparent hover:bg-green-700 text-white py-4 px-6 transition leading-none
+    }
+}
+
+
