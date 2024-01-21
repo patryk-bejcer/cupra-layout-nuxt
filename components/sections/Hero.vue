@@ -1,17 +1,23 @@
 <template>
-  <section class="relative flex items-end h-[calc(100svh-3.5rem)] md:h-[calc(100svh-5rem)] bg-cover bg-center bg-[url('/images/hero.jpg')]">
-    <div class="container mx-auto px-4 py-16 md:py-32 text-white">
+  <section
+    class="relative flex h-[calc(100svh-3.5rem)] max-h-[800px] items-end bg-[url('/images/hero.jpg')] bg-cover bg-center md:h-[calc(100svh-5rem)]"
+  >
+    <div class="container mx-auto px-4 py-16 text-white md:py-32">
       <div class="max-w-[43.75rem]">
         <span class="text-h4 text-gray">CUPRA Formentor</span>
-        <h1 class="text-h2 md:text-h1 mb-6 md:mb-12 mt-2 md:mt-4">
+        <h1 class="mb-6 mt-2 text-h2 md:mb-12 md:mt-4 md:text-h1">
           Wejdź do świata Cupra. <br class="hidden md:inline" />
           Poznaj prawdziwą moc <br class="hidden md:inline" />
           i sportowego ducha marki.
         </h1>
-        <a href="#test-drive-form" class="btn-accent">
-          Ruszaj na jazdę testową
-        </a>
+        <Button variant="accent" href="#test-drive-form">
+          Ruszaj na jazde testową
+        </Button>
       </div>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import Button from "~/components/ui/Button.vue";
+</script>

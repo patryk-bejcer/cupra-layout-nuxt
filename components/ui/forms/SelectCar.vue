@@ -1,59 +1,69 @@
 <template>
-  <div class="custom-select-wrapper relative bg-whiteGray z-10" ref="selectWrapper">
-    <div class="custom-select p-3" @click="toggleDropdown">
-      <img :src="carOptions[selectedCar].image" alt="Selected Car Image"
-           class="selected-car-image w-[160px] md:w-[300px]" />
-      <span class="px-2">{{ carOptions[selectedCar].name }}</span>
+  <div
+    ref="selectWrapper"
+    class="car-select-wrapper relative z-10 bg-whiteGray pl-12"
+  >
+    <div class="car-select p-3" @click="toggleDropdown">
+      <div class=") flex -translate-x-16 items-center">
+        <img
+          :src="carOptions[selectedCar].image"
+          alt="Selected Car Image"
+          class="selected-car-image w-[160px] md:w-[300px]"
+        />
+        <span class="px-2">{{ carOptions[selectedCar].name }}</span>
+      </div>
       <div class="ml-auto pr-3">
-        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        <svg
+          class="size-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"
+          />
         </svg>
       </div>
     </div>
-    <div v-show="isDropdownOpen" class="custom-dropdown">
+    <div
+      v-show="isDropdownOpen"
+      class="custom-dropdown min-w-[calc(100% - 12rem) mt-5 bg-whiteGray"
+    >
       <div
         v-for="(option, key) in dropdownOptions"
         :key="key"
+        class="car-option p-3 pl-12"
         @click="selectCar(key)"
-        class="car-option bg-whiteGray p-3"
       >
-        <img :src="option.image" :alt="`Select ${option.name}`" class="car-image min-w-[160px] md:min-w-[300px]">
-        <span class="px-2">{{ option.name }}</span>
+        <div class="flex -translate-x-16 items-center">
+          <img
+            :src="option.image"
+            :alt="`Select ${option.name}`"
+            class="car-image min-w-[160px] md:min-w-[300px]"
+          />
+          <span class="px-2">{{ option.name }}</span>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
+<script setup lang="ts">
+import { computed } from "vue";
+import type { CarOptions } from "~/types";
 
-<script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+interface SelectCarProps {
+  carOptions: CarOptions;
+}
 
-const selectedCar = ref('cupra-formentor');
+const { carOptions } = defineProps<SelectCarProps>();
+
+const selectedCar = ref("cupra-formentor");
 const isDropdownOpen = ref(false);
-const selectWrapper = ref(null);
-
-const carOptions = {
-  'cupra-formentor': {
-    name: 'Cupra Formentor',
-    image: '/images/cars/CUPRA-Formentor.png',
-  },
-  'cupra-leon': {
-    name: 'Cupra Leon',
-    image: '/images/cars/CUPRA-Leon.png',
-  },
-  'cupra-leon-sportstourer': {
-    name: 'Cupra Leon Sportstourer',
-    image: '/images/cars/CUPRA-Leon-Sportstourer.png',
-  },
-  'cupra-ateca': {
-    name: 'Cupra Ateca',
-    image: '/images/cars/CUPRA-Ateca.png',
-  },
-  'nowa-cupra-born': {
-    name: 'Nowa Cupra Born',
-    image: '/images/cars/CUPRA-Born.png',
-  },
-};
+const selectWrapper = ref<HTMLDivElement | null>(null);
 
 const dropdownOptions = computed(() => {
   return Object.keys(carOptions).reduce((options, key) => {
@@ -61,43 +71,44 @@ const dropdownOptions = computed(() => {
       options[key] = carOptions[key];
     }
     return options;
-  }, {});
+  }, {} as CarOptions);
 });
 
 const toggleDropdown = () => {
   isDropdownOpen.value = !isDropdownOpen.value;
 };
 
-const selectCar = (carKey) => {
+const selectCar = (carKey: string) => {
   selectedCar.value = carKey;
   isDropdownOpen.value = false;
 };
 
-const closeDropdown = (event) => {
-  if (isDropdownOpen.value && !selectWrapper.value.contains(event.target)) {
+const closeDropdown = (event: MouseEvent) => {
+  if (
+    isDropdownOpen.value &&
+    selectWrapper.value &&
+    !selectWrapper.value.contains(event.target as Node)
+  ) {
     isDropdownOpen.value = false;
   }
 };
 
-// Add event listener when component is mounted
 onMounted(() => {
-  window.addEventListener('click', closeDropdown);
+  window.addEventListener("click", closeDropdown);
 });
 
-// Remove event listener when component is unmounted
 onUnmounted(() => {
-  window.removeEventListener('click', closeDropdown);
+  window.removeEventListener("click", closeDropdown);
 });
 </script>
 
 <style scoped>
-.custom-select-wrapper {
-  max-width: 553px; /* Adjust as needed */
+.car-select-wrapper {
   margin: auto;
   position: relative;
 }
 
-.custom-select {
+.car-select {
   appearance: none;
   width: 100%;
   border: 1px solid #ccc;
@@ -107,18 +118,17 @@ onUnmounted(() => {
   justify-content: space-between;
 }
 
-.custom-select:hover {
+.car-select:hover {
   cursor: pointer;
 }
 
 .custom-dropdown {
   position: absolute;
   top: 100%;
-  left: 0;
-  width: 100%;
-  background-color: white;
+  right: 0;
   border: 1px solid #ccc;
-  border-top: none;
+  border-bottom: 0;
+  width: calc(100% - 3rem);
 }
 
 .car-option {
@@ -126,10 +136,11 @@ onUnmounted(() => {
   align-items: center;
   padding: 1em;
   cursor: pointer;
+  border-bottom: 1px solid #ccc;
 }
 
 .car-image {
-  max-width: 50px; /* Adjust as needed */
-  margin-right: 10px; /* Add spacing between image and text */
+  max-width: 50px;
+  margin-right: 10px;
 }
 </style>

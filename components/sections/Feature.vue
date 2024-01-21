@@ -1,46 +1,56 @@
 <template>
-  <section class="feature-section py-14 md:py-[104px] bg-darkGray">
-    <div class="container mx-auto px-4 md:px-6 flex flex-wrap items-center">
-      <!-- Left Column for Text and First Image -->
-      <div class="w-full md:w-3/5 text-white md:pr-4 mb-4 md:mb-6 flex flex-col justify-between">
-        <!-- Text Content -->
+  <section class="feature-section bg-darkGray py-14 md:py-[104px]">
+    <div class="container mx-auto flex flex-wrap items-center px-4 md:px-6">
+      <div
+        class="mb-4 flex w-full flex-col justify-between text-white md:mb-6 md:w-3/5 md:pr-4"
+      >
         <div>
-          <div class="max-w-xl mb-4 md:mb-6">
-            <h2 class="text-h2 md:text-h1 mb-3 md:mb-4">WYPRÓBUJ</h2>
-            <p class="text-base md:text-h4 text-gray mb-3 md:mb-4">
-              Zobacz, poczuj i przekonaj się, czym jest CUPRA. Poznaj
-              samochody, które są wyjątkowym połączeniem technologii,
-              mocy, elegancji i komfortu.
+          <div class="mb-4 max-w-xl md:mb-6">
+            <h2 class="mb-3 text-h2 md:mb-4 md:text-h1">WYPRÓBUJ</h2>
+            <p class="mb-3 text-base text-gray md:mb-4 md:text-h4">
+              Zobacz, poczuj i przekonaj się, czym jest CUPRA. Poznaj samochody,
+              które są wyjątkowym połączeniem technologii, mocy, elegancji i
+              komfortu.
             </p>
           </div>
 
-          <!-- First Image -->
-          <img src="/images/feature1.jpg" alt="Car Image 1" class="w-full h-auto mb-4 md:mb-8">
+          <img
+            src="/images/feature1.jpg"
+            alt="Car Image 1"
+            class="mb-4 h-auto w-full md:mb-8"
+          />
 
-          <p class="text-gray text-sm mb-4 md:mb-16">
-            Design inspirowany wyścigami, stworzony z niezwykłą dbałością o detale.
+          <p class="mb-4 text-sm text-gray md:mb-16">
+            Design inspirowany wyścigami, stworzony z niezwykłą dbałością o
+            detale.
           </p>
 
-          <div class="max-w-lg mb-4 md:mb-0">
-            <h3 class="text-h3 md:text-h3 mb-3 md:mb-4">TYLKO DLA ODWAŻNYCH</h3>
-            <p class="text-base md:text-h4 text-gray mb-8">
-              Model CUPRA, który idealnie wpisuje się w DNA marki.
-              Unikalny SUV coupé, wyjątkowy, odważny i innowacyjny –
-              zapewni Ci to, co najlepsze w marce CUPRA.
+          <div class="mb-4 max-w-lg md:mb-0">
+            <h3 class="mb-3 text-h3 md:mb-4 md:text-h3">TYLKO DLA ODWAŻNYCH</h3>
+            <p class="mb-8 text-base text-gray md:text-h4">
+              Model CUPRA, który idealnie wpisuje się w DNA marki. Unikalny SUV
+              coupé, wyjątkowy, odważny i innowacyjny – zapewni Ci to, co
+              najlepsze w marce CUPRA.
             </p>
-            <a href="#test-drive-form" class="btn-accent">
+            <Button variant="accent" href="#test-drive-form">
               Umów jazdę próbną
-            </a>
+            </Button>
           </div>
         </div>
       </div>
 
-      <!-- Right Column for Second Image -->
-      <div class="w-full md:w-2/5 flex flex-col justify-end md:pl-4 mt-4 md:mt-32">
-        <img src="/images/feature2.jpg" alt="Car Image 2" class="w-full h-auto mb-4 md:mb-8">
+      <div
+        class="mt-4 flex w-full flex-col justify-end md:mt-32 md:w-2/5 md:pl-4"
+      >
+        <img
+          src="/images/feature2.jpg"
+          alt="Car Image 2"
+          class="mb-4 h-auto w-full md:mb-8"
+        />
 
-        <p class="text-gray text-sm mb-4 md:mb-0">
-          Design inspirowany wyścigami, stworzony z niezwykłą dbałością o detale.
+        <p class="mb-4 text-sm text-gray md:mb-0">
+          Design inspirowany wyścigami, stworzony z niezwykłą dbałością o
+          detale.
         </p>
       </div>
     </div>
@@ -48,7 +58,10 @@
 </template>
 
 <script>
+import Button from "~/components/ui/Button.vue";
+
 export default {
-  name: 'FeatureSection',
+  name: "FeatureSection",
+  components: { Button },
 };
 </script>

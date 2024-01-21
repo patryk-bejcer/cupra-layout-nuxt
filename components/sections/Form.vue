@@ -1,161 +1,155 @@
 <template>
-  <section id="test-drive-form" class="form-section py-14 md:py-16 bg-whiteGray">
+  <section
+    id="test-drive-form"
+    class="form-section bg-whiteGray py-14 md:py-16"
+  >
     <div class="container mx-auto max-w-[734px] p-8">
       <h2 class="mb-4 text-center font-thin">Jazda próbna</h2>
-      <h3 class="text-h3 mb-12 text-center">Umów się na bezpłatną<br />jazdę próbną</h3>
+      <h3 class="mb-12 text-center text-h3">
+        Umów się na bezpłatną<br />jazdę próbną
+      </h3>
       <form class="text-black" @submit.prevent="submitForm">
-        <div class="md:px-10 mb-12">
+        <div class="mb-12 md:px-10">
           <div class="mb-8">
-            <SelectCar />
+            <SelectCar :car-options="carOptions" />
           </div>
           <div>
-            <input type="text" id="name" required placeholder="Imię *" class="form-input" />
+            <input
+              id="name"
+              type="text"
+              required
+              placeholder="Imię *"
+              class="form-text-input"
+            />
           </div>
           <div>
-            <input type="text" id="surname" placeholder="Nazwisko (opcjonalnie)" class="form-input" />
+            <input
+              id="surname"
+              type="text"
+              placeholder="Nazwisko (opcjonalnie)"
+              class="form-text-input"
+            />
           </div>
           <div>
-            <input type="email" id="email" placeholder="Adres e-mail *" class="form-input" required />
+            <input
+              id="email"
+              type="email"
+              placeholder="Adres e-mail *"
+              class="form-text-input"
+              required
+            />
           </div>
           <div>
-            <input type="tel" id="phone" placeholder="Nr. telefonu *" class="form-input" required />
+            <input
+              id="phone"
+              type="tel"
+              placeholder="Nr. telefonu *"
+              class="form-text-input"
+              required
+            />
           </div>
 
           <p class="text-[13px] font-light">* Pole wymagane</p>
         </div>
 
-        <p class="text-[13px] font-light mb-6">
-          Wysłanie uzupełnionego formularza oznacza Twoją zgodę na kontakt w celu przedstawienia informacji handlowej w
-          wybrany przez Ciebie sposób w związku Czytaj więcej
-          <br><br>
-          Prosimy Cię też o wyrażenie poniższych zgód w celu możliwości przedstawiania Ci atrakcyjnych ofert / promocji
-          produktów, akcesoriów i usług marki CUPRA w przyszłości.
+        <p class="mb-6 text-[13px] font-light">
+          Wysłanie uzupełnionego formularza oznacza Twoją zgodę na kontakt w
+          celu przedstawienia informacji handlowej w wybrany przez Ciebie sposób
+          w związku Czytaj więcej
+          <br /><br />
+          Prosimy Cię też o wyrażenie poniższych zgód w celu możliwości
+          przedstawiania Ci atrakcyjnych ofert / promocji produktów, akcesoriów
+          i usług marki CUPRA w przyszłości.
         </p>
 
         <div class="mb-4">
-          <input type="checkbox" id="consent" class="custom-checkbox">
+          <input id="consent" type="checkbox" class="form-checkbox" />
           <label for="consent">
-            <span>Zgadzam się na przetwarzanie moich danych osobowych przez Plichta spółka z ograniczoną odpowiedzialnością Spółka Komandytowa w celu przedstawienia mi informacji marketingowych i handlowych dotyczących produktów i usług marki CUPRA oraz innych powiązanych z marką CUPRA akcesoriów, produktów i usług motoryzacyjnych za pomocą:</span>
+            <span
+              >Zgadzam się na przetwarzanie moich danych osobowych przez Plichta
+              spółka z ograniczoną odpowiedzialnością Spółka Komandytowa w celu
+              przedstawienia mi informacji marketingowych i handlowych
+              dotyczących produktów i usług marki CUPRA oraz innych powiązanych
+              z marką CUPRA akcesoriów, produktów i usług motoryzacyjnych za
+              pomocą:</span
+            >
           </label>
         </div>
 
         <div class="mb-4">
-          <input type="checkbox" id="consentEmail" class="custom-checkbox">
+          <input id="consentEmail" type="checkbox" class="form-checkbox" />
           <label for="consentEmail"><span>E-mail</span></label>
         </div>
 
         <div class="mb-4">
-          <input type="checkbox" id="consentPhone" class="custom-checkbox">
+          <input id="consentPhone" type="checkbox" class="form-checkbox" />
           <label for="consentPhone"><span>Telefon</span></label>
         </div>
 
         <div class="mb-4">
-          <input type="checkbox" id="consentSMS" class="custom-checkbox">
+          <input id="consentSMS" type="checkbox" class="form-checkbox" />
           <label for="consentSMS"><span>Wiadomość SMS/MMS</span></label>
         </div>
 
-        <p class="text-[13px] font-light mb-10">
-          Masz prawo do wglądu, modyfikacji, ograniczenia przetwarzania i usunięcia swoich danych oraz do wycofania w
-          każdym momencie swojej zgody.
-          <br><br>
-          Twoje dane będą przetwarzane tylko w stopniu umożliwiającym realizację wymienionego celu.
-          <br><br>
-          Administratorem Twoich danych jest Plichta spółka z ograniczoną odpowiedzialnością Spółka Komandytowa, z
-          siedzibą w Wejherowie przy ulicy Gdańskiej 13c. Zapraszamy do zapoznania się z naszą polityką prywatności
-          umieszczoną pod linkiem: https://www.plichta.com.pl/polityka-prywatnosci
+        <p class="mb-10 text-[13px] font-light">
+          Masz prawo do wglądu, modyfikacji, ograniczenia przetwarzania i
+          usunięcia swoich danych oraz do wycofania w każdym momencie swojej
+          zgody.
+          <br /><br />
+          Twoje dane będą przetwarzane tylko w stopniu umożliwiającym realizację
+          wymienionego celu.
+          <br /><br />
+          Administratorem Twoich danych jest Plichta spółka z ograniczoną
+          odpowiedzialnością Spółka Komandytowa, z siedzibą w Wejherowie przy
+          ulicy Gdańskiej 13c. Zapraszamy do zapoznania się z naszą polityką
+          prywatności umieszczoną pod linkiem:
+          https://www.plichta.com.pl/polityka-prywatnosci
         </p>
 
-        <div class="text-center ">
-          <button type="submit" class="submit-button btn-secondary">
+        <div class="text-center">
+          <Button
+            variant="secondary"
+            href="#"
+            title="Umów się na jazdę próbną"
+            @click.prevent="submitForm"
+          >
             Umów jazdę próbną
-          </button>
+          </Button>
         </div>
       </form>
     </div>
   </section>
 </template>
 
-<script setup>
-import SelectCar from '~/components/ui/forms/SelectCar.vue';
+<script setup lang="ts">
+import SelectCar from "~/components/ui/forms/SelectCar.vue";
+import Button from "~/components/ui/Button.vue";
+import type { CarOptions } from "~/types";
+
+const carOptions: CarOptions = {
+  "cupra-formentor": {
+    name: "Cupra Formentor",
+    image: "/images/cars/CUPRA-Formentor.png",
+  },
+  "cupra-leon": {
+    name: "Cupra Leon",
+    image: "/images/cars/CUPRA-Leon.png",
+  },
+  "cupra-leon-sportstourer": {
+    name: "Cupra Leon Sportstourer",
+    image: "/images/cars/CUPRA-Leon-Sportstourer.png",
+  },
+  "cupra-ateca": {
+    name: "Cupra Ateca",
+    image: "/images/cars/CUPRA-Ateca.png",
+  },
+  "nowa-cupra-born": {
+    name: "Nowa Cupra Born",
+    image: "/images/cars/CUPRA-Born.png",
+  },
+};
 
 const submitForm = () => {
-  alert('Formularz został przesłany');
+  alert("Formularz został przesłany");
 };
 </script>
-
-<style scoped>
-.form-input {
-  background: transparent;
-  border-bottom: 1px solid #cccccc;
-  border-radius: 0;
-  padding: 12px 0;
-  font-weight: 400;
-  width: 100%;
-  margin-bottom: 16px;
-  font-size: 16px;
-}
-
-.form-input::placeholder {
-  color: #242221;
-  opacity: 1;
-  font-weight: 400;
-}
-
-.form-input:focus {
-  outline: none;
-  border-bottom: 1px solid #242221;
-}
-
-label {
-  display: block;
-  margin-bottom: 8px;
-  color: #333;
-  font-size: 14px;
-}
-
-.custom-checkbox {
-  display: none;
-  transition: .3s;
-}
-
-.custom-checkbox + label {
-  position: relative;
-  padding-left: 34px;
-  cursor: pointer;
-  display: inline-block;
-  color: #000;
-  font-size: 13px;
-  font-weight: 300;
-}
-
-.custom-checkbox + label:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 20px;
-  height: 20px;
-  background: transparent;
-  border: 1px solid #D5D5D5;
-  border-radius: 0;
-  box-sizing: border-box;
-}
-
-.custom-checkbox:checked + label:after {
-  content: '';
-  position: absolute;
-  left: 4px;
-  top: 4px;
-  width: 12px;
-  height: 12px;
-  background: #999;
-  border-radius: 0;
-  padding: 2px;
-  box-sizing: border-box;
-}
-
-.custom-checkbox + label span {
-  vertical-align: middle;
-}
-
-</style>
