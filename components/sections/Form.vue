@@ -129,23 +129,23 @@ import type { CarOptions } from "~/types";
 const carOptions: CarOptions = {
   "cupra-formentor": {
     name: "Cupra Formentor",
-    image: "/images/cars/CUPRA-Formentor.png",
+    image: "/images/cars/CUPRA-Formentor.webp",
   },
   "cupra-leon": {
     name: "Cupra Leon",
-    image: "/images/cars/CUPRA-Leon.png",
+    image: "/images/cars/CUPRA-Leon.webp",
   },
   "cupra-leon-sportstourer": {
     name: "Cupra Leon Sportstourer",
-    image: "/images/cars/CUPRA-Leon-Sportstourer.png",
+    image: "/images/cars/CUPRA-Leon-Sportstourer.webp",
   },
   "cupra-ateca": {
     name: "Cupra Ateca",
-    image: "/images/cars/CUPRA-Ateca.png",
+    image: "/images/cars/CUPRA-Ateca.webp",
   },
   "nowa-cupra-born": {
     name: "Nowa Cupra Born",
-    image: "/images/cars/CUPRA-Born.png",
+    image: "/images/cars/CUPRA-Born.webp",
   },
 };
 

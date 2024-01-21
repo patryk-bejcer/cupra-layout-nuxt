@@ -3,7 +3,7 @@
     <div class="container mx-auto flex items-center justify-between">
       <div class="logo pr-4">
         <NuxtLink to="/" title="Przejdź do strony głównej">
-          <img src="/images/logo.png" alt="Cupra Logo" class="h-5" />
+          <img src="/images/logo.webp" alt="Cupra Logo" class="h-5" />
         </NuxtLink>
       </div>
 

@@ -8,7 +8,7 @@
       <div class="feature-item flex w-full flex-col md:flex-row">
         <div class="mb-4 flex-1 md:mb-0">
           <img
-            src="/images/features-1.jpg"
+            src="/images/features-1.webp"
             alt="Technologia"
             class="h-auto w-full max-w-full object-cover md:h-[520px] md:max-w-[846px]"
           />
@@ -34,7 +34,7 @@
       <div class="feature-item flex w-full flex-col md:flex-row">
         <div class="flex-1 md:order-last">
           <img
-            src="/images/features-3.jpg"
+            src="/images/features-3.webp"
             alt="Car Interior"
             class="h-auto w-full max-w-full object-cover md:h-[520px] md:max-w-[768px]"
           />
@@ -59,7 +59,7 @@
       <div class="feature-item flex w-full flex-col md:flex-row">
         <div class="mb-4 flex-1 md:mb-0">
           <img
-            src="/images/features-2.jpg"
+            src="/images/features-2.webp"
             alt="Design wnętrza"
             class="h-auto w-full max-w-full object-cover md:h-[520px] md:max-w-[846px]"
           />

@@ -15,7 +15,7 @@
           </div>
 
           <img
-            src="/images/feature1.jpg"
+            src="/images/feature1.webp"
             alt="Car Image 1"
             class="mb-4 h-auto w-full md:mb-8"
           />
@@ -43,7 +43,7 @@
         class="mt-4 flex w-full flex-col justify-end md:mt-32 md:w-2/5 md:pl-4"
       >
         <img
-          src="/images/feature2.jpg"
+          src="/images/feature2.webp"
           alt="Car Image 2"
           class="mb-4 h-auto w-full md:mb-8"
         />

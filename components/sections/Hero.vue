@@ -1,6 +1,6 @@
 <template>
   <section
-    class="relative flex h-[calc(100svh-3.5rem)] max-h-[800px] items-end bg-[url('/images/hero.jpg')] bg-cover bg-center md:h-[calc(100svh-5rem)]"
+    class="relative flex h-[calc(100svh-3.5rem)] max-h-[800px] items-end bg-[url('/images/hero.webp')] bg-cover bg-center md:h-[calc(100svh-5rem)]"
   >
     <div class="container mx-auto px-4 py-16 text-white md:py-32">
       <div class="max-w-[43.75rem]">
