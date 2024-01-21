@@ -107,14 +107,14 @@
         </p>
 
         <div class="text-center">
-          <Button
+          <Btn
             variant="secondary"
             href="#"
             title="Umów się na jazdę próbną"
             @click.prevent="submitForm"
           >
             Umów jazdę próbną
-          </Button>
+          </Btn>
         </div>
       </form>
     </div>
@@ -123,7 +123,7 @@
 
 <script setup lang="ts">
 import SelectCar from "~/components/ui/forms/SelectCar.vue";
-import Button from "~/components/ui/Button.vue";
+import Btn from "~/components/ui/Btn.vue";
 import type { CarOptions } from "~/types";
 
 const carOptions: CarOptions = {

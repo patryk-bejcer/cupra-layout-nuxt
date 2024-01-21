@@ -27,13 +27,13 @@
               >
             </p>
           </div>
-          <Button
+          <Btn
             variant="secondary"
             href="#test-drive-form"
             title="Umów się na jazdę próbną"
           >
             Umów jazdę próbną
-          </Button>
+          </Btn>
         </div>
       </splide-slide>
     </splide>
@@ -42,7 +42,7 @@
 
 <script setup lang="ts">
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
-import Button from "~/components/ui/Button.vue";
+import Btn from "~/components/ui/Btn.vue";
 import type { Cars } from "~/types";
 
 interface CarCarouselProps {

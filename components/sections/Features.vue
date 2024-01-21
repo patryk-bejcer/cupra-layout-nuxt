@@ -21,13 +21,13 @@
             Poczuj pełną wolność <br />
             jazdy dzięki licznym innowacjom.
           </h3>
-          <Button
+          <Btn
             variant="primary"
             href="#test-drive-form"
             title="Umów się na jazdę próbną"
           >
             Umów jazdę próbną
-          </Button>
+          </Btn>
         </div>
       </div>
 
@@ -46,13 +46,13 @@
           <h3 class="pb-6 text-h3 md:pb-12">
             Crossover emanujący gracją, dynamizmem i czystym wyrafinowaniem.
           </h3>
-          <Button
+          <Btn
             variant="primary"
             href="#test-drive-form"
             title="Umów się na jazdę próbną"
           >
             Umów jazdę próbną
-          </Button>
+          </Btn>
         </div>
       </div>
 
@@ -71,13 +71,13 @@
           <h3 class="pb-6 text-h3 md:pb-12">
             Idealny komfort. Unikalny wystrój wnętrza stworzony w stylu CUPRY.
           </h3>
-          <Button
+          <Btn
             variant="primary"
             href="#test-drive-form"
             title="Umów się na jazdę próbną"
           >
             Umów jazdę próbną
-          </Button>
+          </Btn>
         </div>
       </div>
     </div>
@@ -85,7 +85,7 @@
 </template>
 
 <script setup lang="ts">
-import Button from "~/components/ui/Button.vue";
+import Btn from "~/components/ui/Btn.vue";
 </script>
 
 <style scoped>

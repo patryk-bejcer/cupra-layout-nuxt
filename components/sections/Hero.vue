@@ -10,14 +10,14 @@
           Poznaj prawdziwą moc <br class="hidden md:inline" />
           i sportowego ducha marki.
         </h1>
-        <Button variant="accent" href="#test-drive-form">
+        <Btn variant="accent" href="#test-drive-form">
           Ruszaj na jazde testową
-        </Button>
+        </Btn>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import Button from "~/components/ui/Button.vue";
+import Btn from "~/components/ui/Btn.vue";
 </script>

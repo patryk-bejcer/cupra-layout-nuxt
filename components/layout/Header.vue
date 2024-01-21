@@ -7,7 +7,7 @@
         </NuxtLink>
       </div>
 
-      <button
+      <Btn
         class="lg:hidden"
         aria-label="Przełącz menu"
         :aria-expanded="menuOpen.toString()"
@@ -34,7 +34,7 @@
             d="M6 18L18 6M6 6l12 12"
           />
         </svg>
-      </button>
+      </Btn>
 
       <div
         :class="{
@@ -74,7 +74,7 @@
           @click="toggleMenu"
           >Salony Cupra
         </NuxtLink>
-        <button
+        <Btn
           class="absolute right-5 top-5 !mt-0"
           aria-label="Close menu"
           @click="toggleMenu"
@@ -93,7 +93,7 @@
               d="M6 18L18 6M6 6l12 12"
             />
           </svg>
-        </button>
+        </Btn>
       </div>
 
       <nav
@@ -135,28 +135,28 @@
             >+48 58 506 65 65</a
           >
         </div>
-        <Button
+        <Btn
           variant="primary"
           class="hidden xl:inline-block"
           href="#test-drive-form"
           title="Zapytaj o ofertę"
         >
           Zapytaj o ofertę
-        </Button>
-        <Button
+        </Btn>
+        <Btn
           variant="secondary"
           href="#test-drive-form"
           title="Umów się na jazdę próbną"
         >
           Umów jazdę próbną
-        </Button>
+        </Btn>
       </div>
     </div>
   </header>
 </template>
 
 <script setup lang="ts">
-import Button from "~/components/ui/Button.vue";
+import Btn from "~/components/ui/Btn.vue";
 
 const menuOpen = ref(false);
 

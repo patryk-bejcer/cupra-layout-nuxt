@@ -32,9 +32,9 @@
               coupé, wyjątkowy, odważny i innowacyjny – zapewni Ci to, co
               najlepsze w marce CUPRA.
             </p>
-            <Button variant="accent" href="#test-drive-form">
+            <Btn variant="accent" href="#test-drive-form">
               Umów jazdę próbną
-            </Button>
+            </Btn>
           </div>
         </div>
       </div>
@@ -58,10 +58,10 @@
 </template>
 
 <script>
-import Button from "~/components/ui/Button.vue";
+import Btn from "~/components/ui/Btn.vue";
 
 export default {
   name: "FeatureSection",
-  components: { Button },
+  components: { Btn },
 };
 </script>

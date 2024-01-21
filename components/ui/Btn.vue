@@ -7,12 +7,12 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-interface ButtonProps {
+interface BtnProps {
   variant: "primary" | "secondary" | "accent" | "transparent" | string;
   href: string;
 }
 
-const props = defineProps<ButtonProps>();
+const props = defineProps<BtnProps>();
 
 const buttonClass = computed(() => {
   switch (props.variant) {
