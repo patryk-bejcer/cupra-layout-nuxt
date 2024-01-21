@@ -7,7 +7,7 @@
         </NuxtLink>
       </div>
 
-      <Btn
+      <button
         class="lg:hidden"
         aria-label="Przełącz menu"
         :aria-expanded="menuOpen.toString()"
@@ -34,7 +34,7 @@
             d="M6 18L18 6M6 6l12 12"
           />
         </svg>
-      </Btn>
+      </button>
 
       <div
         :class="{
@@ -74,7 +74,7 @@
           @click="toggleMenu"
           >Salony Cupra
         </NuxtLink>
-        <Btn
+        <button
           class="absolute right-5 top-5 !mt-0"
           aria-label="Close menu"
           @click="toggleMenu"
@@ -93,7 +93,7 @@
               d="M6 18L18 6M6 6l12 12"
             />
           </svg>
-        </Btn>
+        </button>
       </div>
 
       <nav
