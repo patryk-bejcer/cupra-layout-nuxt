@@ -3,7 +3,7 @@
     id="test-drive-form"
     class="form-section bg-whiteGray py-14 md:py-16"
   >
-    <div class="container mx-auto max-w-[734px] p-8">
+    <div class="container mx-auto max-w-[734px] md:py-8">
       <h2 class="mb-4 text-center font-thin">Jazda próbna</h2>
       <h3 class="mb-12 text-center text-h3">
         Umów się na bezpłatną<br />jazdę próbną
@@ -49,10 +49,10 @@
             />
           </div>
 
-          <p class="text-[13px] font-light">* Pole wymagane</p>
+          <p class="text-xs font-light">* Pole wymagane</p>
         </div>
 
-        <p class="mb-6 text-[13px] font-light">
+        <p class="mb-6 text-xs font-light">
           Wysłanie uzupełnionego formularza oznacza Twoją zgodę na kontakt w
           celu przedstawienia informacji handlowej w wybrany przez Ciebie sposób
           w związku Czytaj więcej
@@ -91,7 +91,7 @@
           <label for="consentSMS"><span>Wiadomość SMS/MMS</span></label>
         </div>
 
-        <p class="mb-10 text-[13px] font-light">
+        <p class="mb-10 text-xs font-light">
           Masz prawo do wglądu, modyfikacji, ograniczenia przetwarzania i
           usunięcia swoich danych oraz do wycofania w każdym momencie swojej
           zgody.

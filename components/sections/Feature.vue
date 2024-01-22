@@ -1,13 +1,13 @@
 <template>
   <section class="feature-section bg-darkGray py-14 md:py-[104px]">
-    <div class="container mx-auto flex flex-wrap items-center px-4 md:px-6">
+    <div class="container mx-auto flex flex-wrap items-center">
       <div
         class="mb-4 flex w-full flex-col justify-between text-white md:mb-6 md:w-3/5 md:pr-4"
       >
         <div>
-          <div class="mb-4 max-w-xl md:mb-6">
+          <div class="mb-4 max-w-xl md:mb-16">
             <h2 class="mb-3 text-h2 md:mb-4 md:text-h1">WYPRÓBUJ</h2>
-            <p class="mb-3 text-base text-gray md:mb-4 md:text-h4">
+            <p class="mb-3 text-base text-gray md:text-h4">
               Zobacz, poczuj i przekonaj się, czym jest CUPRA. Poznaj samochody,
               które są wyjątkowym połączeniem technologii, mocy, elegancji i
               komfortu.
@@ -40,7 +40,7 @@
       </div>
 
       <div
-        class="mt-4 flex w-full flex-col justify-end md:mt-32 md:w-2/5 md:pl-4"
+        class="mt-4 flex w-full flex-col justify-end md:mt-32 md:w-2/5 md:pl-4 md:pt-16"
       >
         <img
           src="/images/feature2.webp"

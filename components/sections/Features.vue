@@ -3,7 +3,7 @@
     class="features-section bg-darkGray py-14 pt-16 text-white md:pb-[96px] md:pt-[172px]"
   >
     <div
-      class="container mx-auto flex flex-wrap items-center gap-y-8 px-4 md:gap-y-[120px] md:px-6"
+      class="container mx-auto flex flex-wrap items-center gap-y-8 md:gap-y-[120px]"
     >
       <div class="feature-item flex w-full flex-col md:flex-row">
         <div class="mb-4 flex-1 md:mb-0">

@@ -1,6 +1,6 @@
 # Cupra Layout Nuxt 3 
 
-Live: https://cupra-pb.netlify.app
+Live: https://cupra-layout-nuxt.vercel.app/
 
 ## Setup
 

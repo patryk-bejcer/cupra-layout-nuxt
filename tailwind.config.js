@@ -21,6 +21,9 @@ export default {
         lightGray: "#D5D5D5",
       },
       fontSize: {
+        // Default
+        xs: "0.8125rem",
+        // Headings
         h1: [
           "3.75rem",
           { lineHeight: "1", fontWeight: "100", letterSpacing: "2px" },
@@ -34,12 +37,18 @@ export default {
           { lineHeight: "1.25", fontWeight: "100", letterSpacing: "2px" },
         ],
         h4: ["1.25rem", { lineHeight: "1.25", fontWeight: "300" }],
-        h5: ["1rem", { lineHeight: "1", fontWeight: "100" }], //
+        h5: ["1rem", { lineHeight: "1", fontWeight: "100" }],
         h6: ["0.875rem", { lineHeight: "1", fontWeight: "300" }],
       },
       container: {
         center: true,
-        padding: "1rem",
+        padding: {
+          DEFAULT: "1.5rem",
+          sm: "1.5rem",
+          lg: "2rem",
+          xl: "2rem",
+          "2xl": "2rem",
+        },
         screens: {
           sm: "640px",
           md: "768px",

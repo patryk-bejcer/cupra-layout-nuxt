@@ -3,8 +3,16 @@
     ref="selectWrapper"
     class="car-select-wrapper relative z-10 bg-whiteGray pl-12"
   >
-    <div class="car-select p-3" @click="toggleDropdown">
-      <div class=") flex -translate-x-16 items-center">
+    <div
+      class="car-select p-3"
+      role="button"
+      aria-haspopup="listbox"
+      aria-expanded="isDropdownOpen"
+      tabindex="0"
+      @click="toggleDropdown"
+      @keydown="handleKeyDown"
+    >
+      <div class="flex -translate-x-16 items-center">
         <img
           :src="carOptions[selectedCar].image"
           alt="Selected Car Image"
@@ -31,12 +39,18 @@
     <div
       v-show="isDropdownOpen"
       class="custom-dropdown min-w-[calc(100% - 12rem) mt-5 bg-whiteGray"
+      role="listbox"
+      tabindex="-1"
     >
       <div
         v-for="(option, key) in dropdownOptions"
         :key="key"
         class="car-option p-3 pl-12"
+        role="option"
+        :aria-selected="selectedCar === key"
+        tabindex="0"
         @click="selectCar(key)"
+        @keydown="handleOptionKeyDown(key, $event)"
       >
         <div class="flex -translate-x-16 items-center">
           <img
@@ -52,7 +66,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { ref, computed, watch } from "vue";
+import { onClickOutside } from "@vueuse/core";
 import type { CarOptions } from "~/types";
 
 interface SelectCarProps {
@@ -64,6 +79,7 @@ const { carOptions } = defineProps<SelectCarProps>();
 const selectedCar = ref("cupra-formentor");
 const isDropdownOpen = ref(false);
 const selectWrapper = ref<HTMLDivElement | null>(null);
+const focusedOption = ref<string | null>(null);
 
 const dropdownOptions = computed(() => {
   return Object.keys(carOptions).reduce((options, key) => {
@@ -83,64 +99,83 @@ const selectCar = (carKey: string) => {
   isDropdownOpen.value = false;
 };
 
-const closeDropdown = (event: MouseEvent) => {
-  if (
-    isDropdownOpen.value &&
-    selectWrapper.value &&
-    !selectWrapper.value.contains(event.target as Node)
-  ) {
-    isDropdownOpen.value = false;
+const handleKeyDown = (event: KeyboardEvent) => {
+  switch (event.key) {
+    case "Enter":
+    case " ":
+      toggleDropdown();
+      break;
+    case "Escape":
+      isDropdownOpen.value = false;
+      break;
   }
 };
 
-onMounted(() => {
-  window.addEventListener("click", closeDropdown);
+const handleOptionKeyDown = (carKey: string, event: KeyboardEvent) => {
+  switch (event.key) {
+    case "Enter":
+      selectCar(carKey);
+      break;
+  }
+};
+
+onClickOutside(selectWrapper, () => {
+  if (isDropdownOpen.value) {
+    isDropdownOpen.value = false;
+  }
 });
 
-onUnmounted(() => {
-  window.removeEventListener("click", closeDropdown);
+watch(isDropdownOpen, (newValue) => {
+  if (newValue) {
+    focusedOption.value = null;
+  }
 });
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .car-select-wrapper {
   margin: auto;
   position: relative;
-}
 
-.car-select {
-  appearance: none;
-  width: 100%;
-  border: 1px solid #ccc;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+  .car-select {
+    appearance: none;
+    width: 100%;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-.car-select:hover {
-  cursor: pointer;
-}
+    &:hover {
+      cursor: pointer;
+    }
+  }
 
-.custom-dropdown {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  border: 1px solid #ccc;
-  border-bottom: 0;
-  width: calc(100% - 3rem);
-}
+  .custom-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    border: 1px solid #ccc;
+    border-bottom: 0;
+    width: calc(100% - 3rem);
+  }
 
-.car-option {
-  display: flex;
-  align-items: center;
-  padding: 1em;
-  cursor: pointer;
-  border-bottom: 1px solid #ccc;
-}
+  .car-option {
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+    transition: opacity 0.2s ease-in-out;
 
-.car-image {
-  max-width: 50px;
-  margin-right: 10px;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .car-image {
+    max-width: 50px;
+    margin-right: 10px;
+  }
 }
 </style>
