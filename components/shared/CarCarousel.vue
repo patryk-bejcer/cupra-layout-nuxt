@@ -3,7 +3,7 @@
     <splide-slide v-for="(car, index) in cars" :key="index">
       <div class="flex flex-col items-center text-center">
         <h2 class="text-h2 font-light mb-14">{{ car.name }}</h2>
-        <img :src="car.imageSrc" :alt="car.name" class="mb-9" />
+        <img :src="car.image" :alt="car.name" class="mb-9" />
         <p class="text-sm text-gray mb-12">Akumulator 58 kWh moc do 204 KM²</p>
         <div
           class="flex flex-col gap-x-12 gap-y-6 md:flex-row md:items-start md:gap-y-0 mb-12"
