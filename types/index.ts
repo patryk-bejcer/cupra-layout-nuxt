@@ -1,6 +1,6 @@
 export interface Car {
   name: string;
-  imageSrc: string;
+  image: string;
   leasingInfo: string;
   monthlyRate: string;
   totalPrice: string;
