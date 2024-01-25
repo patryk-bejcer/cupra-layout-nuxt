@@ -5,7 +5,7 @@
     <div class="container py-16 md:py-32 text-white">
       <div class="max-w-[43.75rem]">
         <span class="text-h4 text-gray">CUPRA Formentor</span>
-        <h1 class="mt-2 mb-6 text-h2 md:mt-4 md:mb-12 md:text-h1">
+        <h1 class="mt-2 mb-6 text-h3 md:mt-4 md:mb-12 lg:text-h1">
           Wejdź do świata Cupra. <br class="hidden md:inline" />
           Poznaj prawdziwą moc <br class="hidden md:inline" />
           i sportowego ducha marki.

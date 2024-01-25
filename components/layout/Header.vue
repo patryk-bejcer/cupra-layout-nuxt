@@ -74,6 +74,35 @@
           @click="toggleMenu"
           >Salony Cupra
         </NuxtLink>
+
+        <div class="mobile-actions flex flex-col justify-center mt-auto">
+          <div class="phone text-center py-5">
+            <a
+              href="tel:+48585066565"
+              class="text-sm font-medium hover:underline"
+              title="Zadzwoń do nas"
+              >+48 58 506 65 65</a
+            >
+          </div>
+
+          <div class="flex flex-col items-center space-y-5">
+            <Btn
+              variant="primary"
+              href="#test-drive-form"
+              title="Zapytaj o ofertę"
+            >
+              Zapytaj o ofertę
+            </Btn>
+            <Btn
+              variant="secondary"
+              href="#test-drive-form"
+              title="Umów się na jazdę próbną"
+            >
+              Umów jazdę próbną
+            </Btn>
+          </div>
+        </div>
+
         <button
           class="absolute right-5 top-5 !mt-0"
           aria-label="Close menu"
@@ -127,7 +156,7 @@
       </nav>
 
       <div class="hidden items-center space-x-6 lg:flex">
-        <div class="phone mr-6">
+        <div class="phone xl:mr-6 mr-0 md:mr-3 ml-0 md:ml-3 xl:ml-0">
           <a
             href="tel:+48585066565"
             class="text-sm font-medium hover:underline"
