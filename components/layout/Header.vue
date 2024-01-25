@@ -90,6 +90,7 @@
               variant="primary"
               href="#test-drive-form"
               title="Zapytaj o ofertę"
+              @click="toggleMenu"
             >
               Zapytaj o ofertę
             </Btn>
@@ -97,6 +98,7 @@
               variant="secondary"
               href="#test-drive-form"
               title="Umów się na jazdę próbną"
+              @click="toggleMenu"
             >
               Umów jazdę próbną
             </Btn>
